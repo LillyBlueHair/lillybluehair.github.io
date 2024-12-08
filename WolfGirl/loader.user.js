@@ -12,7 +12,7 @@
 
 (function () {
     "use strict";
-    const src = `http://localhost:3042/WolfGirl/main.js?v=${Date.now()}`;
+    const src = `https://lillybluehair.github.io/WolfGirl/main.js?v=${Date.now()}`;
     if (typeof BCWolfGirl_Loaded === "undefined") {
         const script = document.createElement("script");
         script.src = src;
