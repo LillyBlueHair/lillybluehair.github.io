@@ -4,7 +4,9 @@
 // @version 1.6
 // @description Bondage Club Markings for Luke's subs
 // @author LillyBlueHair
-// @include /^https?:\/\/(www\.)?(bondageprojects\.elementfx|bondage-europe)\.com\/R\d+\/(BondageClub|\d+)(\/((index|\d+)\.html)?)?$/
+// @match https://*.bondageprojects.elementfx.com/R*/*
+// @match https://*.bondage-europe.com/R*/*
+// @match https://*.bondageprojects.com/R*/*
 // @grant none
 // @run-at document-end
 // ==/UserScript==
