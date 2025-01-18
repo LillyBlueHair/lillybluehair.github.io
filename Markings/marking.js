@@ -319,6 +319,7 @@
         let C = args[0];
         
         if(playerList.includes(C.MemberNumber)){
+            console.log("Lilly's player");
             let pos = sorted.indexOf(sorted.find((e) => e.Asset.DynamicGroupName === "BodyLower"));
             sorted.splice(pos + 1, 0, "markingLilly");
         }
