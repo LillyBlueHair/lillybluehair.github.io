@@ -322,7 +322,7 @@
             let pos = sorted.indexOf(sorted.find((e) => e.Asset.DynamicGroupName === "BodyLower"));
             sorted.splice(pos + 1, 0, "markingLilly");
         }
-        return next(args);
+        return sorted;
     });
 
 	mod.hookFunction("CommonDrawAppearanceBuild", 1, (args, next) => {
