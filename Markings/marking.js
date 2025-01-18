@@ -319,7 +319,6 @@
         let C = args[0];
         
         if(playerList.includes(C.MemberNumber)){
-            console.log("Lilly's player");
             let pos = sorted.indexOf(sorted.find((e) => e.Asset.DynamicGroupName === "BodyLower"));
             sorted.splice(pos + 1, 0, "markingLilly");
         }
@@ -337,10 +336,6 @@
         drawImageColorize,
         drawImageColorizeBlink} = args[1];
 		// Loop through all layers in the character appearance
-		/*if(playerList.includes(C.MemberNumber)){
-            let pos = C.AppearanceLayers.indexOf(C.AppearanceLayers.find((e) => e.Asset.DynamicGroupName === "BodyLower"));
-		    C.AppearanceLayers.splice(pos + 1, 0, "markingLilly");
-        }*/
 		for (const layer of C.AppearanceLayers) {
 			if (layer == "markingLilly") {
 				let { X, Y, fixedYOffset } = CommonDrawComputeDrawingCoordinates(
