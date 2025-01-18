@@ -313,7 +313,7 @@
 		version: MOD_VERSION,
 		repository: MOD_REPOSITORY,
 	});
-    const playerList = [38896,33048,142706,16361,167320,132756,121031,143373,137523,94934,178559,27835,172579,132030];
+    const playerList = [35982,33048,142706,16361,167320,132756,121031,143373,137523,94934,178559,27835,172579,132030];
 	mod.hookFunction("CommonDrawAppearanceBuild", 1, (args, next) => {
         let C = args[0];
 		let {clearRect,
