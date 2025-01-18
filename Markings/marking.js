@@ -325,7 +325,7 @@
         drawImageColorize,
         drawImageColorizeBlink} = args[1];
 		// Loop through all layers in the character appearance
-		if(C.MemberNumber in playerList){
+		if(playerList.includes(C.MemberNumber)){
             let pos = C.AppearanceLayers.indexOf(C.AppearanceLayers.find((e) => e.Asset.DynamicGroupName === "BodyLower"));
 		    C.AppearanceLayers.splice(pos + 1, 0, "markingLilly");
         }
