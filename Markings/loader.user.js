@@ -12,8 +12,17 @@
 // @grant none
 // @run-at document-end
 // ==/UserScript==
-import(
-	`https://lillybluehair.github.io/Markings/marking.js?v=${(
-		Date.now()
-	).toFixed(0)}`
-)
+
+(function () {
+    "use strict";
+    const src = `https://lillybluehair.github.io/Markings/marking.js?v=${Date.now()}`;
+    if (typeof markings_loaded === "undefined") {
+        console.log("loading Markings");
+        const script = document.createElement("script");
+        script.src = src;
+        script.type = "text/javascript";
+        script.crossOrigin = "anonymous";
+        script.id = "Markings";
+        document.head.appendChild(script);
+    }
+})();
