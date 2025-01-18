@@ -315,17 +315,13 @@
 	});
     const playerList = [35982,33048,142706,16361,167320,132756,121031,143373,137523,94934,178559,27835,172579,132030];
     mod.hookFunction("CharacterAppearanceSortLayers", 1, (args, next) => {
-        let sorted = next(args);
+        let layers = next(args);
         let C = args[0];
-        
-        if(playerList.includes(C.MemberNumber)){
-            let pos = sorted.indexOf(sorted.find((e) => e.Asset.DynamicGroupName === "BodyLower"));
-            sorted.splice(pos + 1, 0, "markingLilly");
-        }
-        return sorted;
+        layers.push({Name: "markingLilly", Priority: 9.55555});
+        return AssetLayerSort(layers);
     });
 
-	mod.hookFunction("CommonDrawAppearanceBuild", 1, (args, next) => {
+	mod.hookFunction("CommonDrawAppearanceBuild", 9999, (args, next) => {
         let C = args[0];
 		let {clearRect,
         clearRectBlink,
@@ -337,7 +333,7 @@
         drawImageColorizeBlink} = args[1];
 		// Loop through all layers in the character appearance
 		for (const layer of C.AppearanceLayers) {
-			if (layer == "markingLilly") {
+			if (layer.Name && layer.Name == "markingLilly") {
 				let { X, Y, fixedYOffset } = CommonDrawComputeDrawingCoordinates(
 					C,
 					{ FixedPosition: false },
